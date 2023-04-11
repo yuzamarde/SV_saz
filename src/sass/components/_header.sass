@@ -1,0 +1,198 @@
+.header
+	padding: 50px 0
+	+d
+		padding: 44px 0 
+	+m
+		padding: 48px 0 40px 
+	&__center
+		display: flex
+		align-items: center
+		+m
+			padding: 0 32px 
+	&__logo
+		flex-shrink: 0
+		+d
+			position: relative
+			z-index: 12
+	&__pic
+		width: 138px
+		+m
+			width: 115px
+		&_light
+			display: none
+	&__wrapper
+		display: flex
+		align-items: center
+		flex-grow: 1
+		padding-left: 55px
+		+d
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			z-index: 10
+			height: 100vh
+			padding: 174px 64px 64px 
+			flex-direction: column
+			align-items: flex-start
+			overflow: hidden
+			background: $light 
+			visibility: hidden
+			opacity: 0
+			transition: all .2s 
+			&.visible
+				visibility: visible
+				opacity: 1
+		+t
+			padding: 174px 32px 64px 
+		+m
+			padding: 128px 32px 40px
+	&__preview
+		display: none
+		position: absolute
+		top: 50%
+		right: calc(50% - 803px) 
+		transform: translateY(-51.5%)
+		pointer-events: none
+		+d
+			display: block 
+		+m
+			display: none
+		+s
+			display: block
+			top: auto
+			right: -300px
+			width: 650px
+			bottom: 100px
+			transform: translateY(0)
+			img
+				width: 100% 
+	&__nav
+		display: flex
+		align-items: center
+		margin-right: auto
+		+d
+			flex-direction: column
+			align-items: flex-start
+			margin-bottom: auto
+		+m
+			position: relative
+			z-index: 3
+			flex-wrap: wrap
+			flex-direction: row
+			margin: -16px 0 auto -24px 
+		+s
+			flex-direction: column
+			margin: 0 0 auto
+	&__link
+		font-weight: 600
+		color: $gray  
+		transition: color .2s
+		+d
+			+fp
+			font-size: 32px
+			line-height: (40/32) 
+		+t
+			color: rgba($black, .7)
+		+m
+			margin: 16px 0 0 24px 
+			font-size: 24px
+			color: $black
+		+s
+			margin: 0 
+		&:hover
+			color: $black
+		&.active
+			color: $primary
+			+t
+				color: $primary
+			+m
+				color: $primary
+		+nl
+			margin-right: 48px
+			+d
+				margin: 0 0 32px 
+			+m
+				margin: 16px 0 0 24px 
+			+s
+				margin: 0 0 24px 
+	&__btns
+		display: flex
+		+m
+			position: relative
+			z-index: 3
+			flex-direction: row-reverse
+			width: calc(100% + 16px) 
+			margin: 0 -8px 
+	&__btn
+		min-width: auto 
+		+m
+			flex: 0 0 calc(50% - 12px)
+			min-width: calc(50% - 12px)
+			margin: 0 6px 
+		+nl
+			margin-right: 8px
+			+m
+				margin-right: 6px
+	&__burger
+		position: relative
+		z-index: 12
+		display: none
+		width: 32px
+		height: 32px
+		margin-left: auto
+		text-align: center
+		transition: background .3s
+		-webkit-tap-highlight-color: rgba(0,0,0,0)
+		+d
+			display: inline-block
+		&:before,
+		&:after
+			display: block
+			width: 32px
+			height: 2px
+			background: $black
+			transition: transform .2s, width .2s, background .2s
+		&:before,
+		&:after
+			content: '' 
+			margin: 8px auto 
+		&.active
+			&:before
+				transform: translateY(5.5px) rotate(45deg)
+			&:after
+				transform: translateY(-5.5px) rotate(-45deg)
+	+nl
+		margin-bottom: 20px
+		+d
+			margin-bottom: 12px
+		+m
+			margin: 0
+
++dark
+	.header
+		&__pic
+			&_dark
+				display: none
+			&_light
+				display: inline-block
+		&__link
+			+t
+				color: rgba($white, .7)
+			+m
+				color: $white
+			&:hover
+				color: $white
+			&.active
+				color: $primary
+				+t
+					color: $primary
+				+m
+					color: $primary
+		&__burger
+			&:before,
+			&:after
+				background: $white
+		&__wrapper
+			+d
+				background: $dark 

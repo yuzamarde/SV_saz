@@ -1,0 +1,33 @@
+---
+title: Contact
+---
+extends layouts/_layout
+block content
+	+header('', '', '', '', 'active')
+	.contact
+		.contact__center.center
+			.contact__bg
+				.contact__preview
+					img(srcset="img/figures-2.1@2x.png 2x" src="img/figures-2.1.png" alt="")
+				.contact__preview(data-aos="animation-translate-up" data-aos-duration="1000")
+					img(srcset="img/figures-2.2@2x.png 2x" src="img/figures-2.2.png" alt="")
+				.contact__preview(data-aos="animation-translate-down" data-aos-duration="1000" data-aos-delay="400")
+					img(srcset="img/figures-2.3@2x.png 2x" src="img/figures-2.3.png" alt="")
+				.contact__preview(data-aos="animation-translate-down" data-aos-duration="1000" data-aos-delay="800")
+					img(srcset="img/figures-2.4@2x.png 2x" src="img/figures-2.4.png" alt="")
+				.contact__preview
+					img(srcset="img/figures-2.5@2x.png 2x" src="img/figures-2.5.png" alt="")
+			.contact__wrap
+				h1.contact__title.h2(data-aos="animation-scale-top" data-aos-duration="600") Contact Us
+				.contact__info Questions, bug reports, feedback.
+				form.contact__form
+					.field
+						.field__label Your email
+						.field__wrap
+							input.field__input(type="email" placeholder="Enter your email")
+					.field
+						.field__label Tell us what you need help with:
+						.field__wrap
+							textarea.field__textarea(placeholder="Enter a topic, like “channel problem...”")
+					button.contact__btn.btn.btn_orange Send now
+	+footer('', '', '', '', 'active')

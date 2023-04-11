@@ -1,0 +1,74 @@
+include _mixins
+doctype html
+html(lang="en")
+	head
+		include _head
+
+	body(class=bodyClass)
+		//- check dark mode
+		script.
+			console.log(localStorage.getItem('darkMode'));
+			if (localStorage.getItem('darkMode') === "on") {
+					document.body.classList.add("dark");
+					document.addEventListener("DOMContentLoaded", function() {
+					  document.querySelector('.js-switch-theme input').checked = true;
+					});
+			}
+			
+		.page(class=pageClass)
+			block content
+
+			//- popup sign-up
+			.popup.mfp-hide#popup-sign-up
+				.popup__title.h2 Sign up
+				.popup__variants
+					a.popup__variant(href="#")
+						img(src="img/google.svg" alt="")
+						| Sign up via Google
+					a.popup__variant(href="#")
+						img(src="img/apple.svg" alt="")
+						| Sign up via Apple
+				.popup__details Or continue with email
+				.popup__btns
+					a.popup__btn.btn.btn_dark.js-popup-open(href="#popup-code" data-effect="mfp-zoom-in") Enter your email
+					a.popup__btn.btn.btn_orange.js-popup-open(href="#popup-code" data-effect="mfp-zoom-in") Continue
+				.popup__note By clicking the Continue button, you agree to the terms of service and privacy policy.
+
+			//- popup code
+			.popup.mfp-hide#popup-code
+				.popup__title.h2 Check your <br>inbox
+				.popup__info Solo just sent you a 6-Digit Code to <a href="mailto:tam@ui8.net">tam@ui8.net</a> please check your inbox and enter the code below.
+				.popup__code
+					.popup__number
+						input(type="tel")
+					.popup__number
+						input(type="tel")
+					.popup__number
+						input(type="tel")
+					.popup__number
+						input(type="tel")
+					.popup__number
+						input(type="tel")
+					.popup__number
+						input(type="tel")
+				.popup__btns
+					button.popup__btn.btn.btn_orange Enter
+					a.popup__link(href="#") Resend digit code
+			//- popup sign-in
+			.popup.mfp-hide#popup-sign-in
+				.popup__title.h2 Sign in
+				.popup__variants
+					a.popup__variant(href="#")
+						img(src="img/google.svg" alt="")
+						| Sign up via Google
+					a.popup__variant(href="#")
+						img(src="img/apple.svg" alt="")
+						| Sign up via Apple
+				.popup__details Or continue with email & password
+				.popup__btns
+					a.popup__btn.btn.btn_dark.js-popup-open(href="#popup-code" data-effect="mfp-zoom-in") Enter your email
+					a.popup__btn.btn.btn_dark.js-popup-open(href="#popup-code" data-effect="mfp-zoom-in") Password
+					a.popup__btn.btn.btn_orange.js-popup-open(href="#popup-code" data-effect="mfp-zoom-in") Sign In
+				.popup__note 
+
+		include ./_scripts

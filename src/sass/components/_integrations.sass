@@ -1,0 +1,74 @@
+.integrations
+	&__center
+		display: flex
+		align-items: center
+		padding-right: 144px
+		+d
+			display: block
+			padding-right: 64px
+			text-align: center
+	&__wrap
+		max-width: 405px
+		margin-right: auto
+		+d
+			max-width: 100% 
+			margin: 0 0 80px
+		+m
+			margin-bottom: 48px 
+	.stage
+		margin-bottom: 12px
+	&__title
+		margin-bottom: 24px
+	&__text
+		color: $gray 
+		+d
+			max-width: 405px
+			margin: 0 auto 
+	&__list
+		flex-shrink: 0
+		width: 464px
+		+d
+			margin: 0 auto
+		+s
+			width: 100%  
+	&__row
+		display: flex
+		align-items: center
+		margin: 0 -20px 
+		+m
+			margin: 0 -14px 
+	&__col
+		flex: 0 0 calc(33.333% - 40px)
+		width: calc(33.333% - 40px)
+		margin: 0 20px 
+		+m
+			flex: 0 0 calc(33.333% - 24px)
+			width: calc(33.333% - 24px)
+			margin: 0 12px 
+	&__logo
+		display: flex
+		justify-content: center
+		align-items: center
+		height: 128px
+		box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06)
+		background: $white 
+		border-radius: 24px
+		+m
+			height: 92px
+		img
+			+m
+				max-width: 42px
+				max-height: 42px
+		+nl
+			margin-bottom: 40px
+	+nl
+		margin-bottom: 136px
+		+d
+			margin-bottom: 100px
+		+m
+			margin-bottom: 48px
+
++dark
+	.integrations
+		&__logo
+			background: $dark-bg 

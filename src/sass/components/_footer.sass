@@ -1,0 +1,113 @@
+.footer
+	position: relative
+	&__body
+		margin-bottom: 55px
+		+d
+			display: flex
+			align-items: flex-start
+			margin-bottom: 24px
+		+m
+			display: block
+			text-align: center
+	&__wrap
+		max-width: 345px
+		margin-bottom: 24px
+		+d
+			margin: 0
+		+m
+			max-width: 100% 
+			margin-bottom: 24px
+	&__logo
+		display: inline-block
+		margin-bottom: 24px
+	&__pic
+		width: 138px
+		&_light
+			display: none
+	&__text
+		color: $gray
+		+m
+			max-width: 230px
+			margin: 0 auto  
+	&__line
+		display: flex
+		align-items: center
+		+d
+			margin: -5px 0 0 auto
+		+m
+			justify-content: center
+			margin: 0 auto
+			max-width: 414px 
+	&__downloads
+		display: flex
+	&__download
+		img
+			+d
+				height: 56px
+		+nl
+			margin-right: 12px
+	&__nav
+		display: flex
+		align-items: center
+		margin-left: auto
+		+d
+			display: none
+	&__nav &__link
+		font-weight: 600
+		color: $gray  
+		transition: color .2s
+		&:hover
+			color: $black
+		&.active
+			color: $primary 
+		+nl
+			margin-right: 48px
+	&__bottom
+		display: flex
+		align-items: center
+		padding: 24px 0 
+		border-top: 2px solid rgba($secondary, .15)
+		+m
+			display: block
+			text-align: center
+	&__copyright
+		margin-right: auto
+		+caption-13
+		color: $gray
+		+m
+			margin: 0 0 24px 
+	&__social
+		display: flex
+		align-items: center
+		+m
+			justify-content: center
+	&__social &__link
+		font-size: 0
+		.icon
+			font-size: 16px
+			fill: $gray
+			transition: fill .2s
+		&:hover .icon
+			fill: $black
+		+nl
+			margin-right: 24px
+
++dark
+	.footer
+		&__pic
+			&_dark
+				display: none
+			&_light
+				display: inline-block
+		&__link
+			&:hover
+				color: $white
+			&.active
+				color: $primary
+		&__copyright
+			color: $gray-light
+		&__social .footer__link
+			.icon
+				fill: $gray-light
+			&:hover .icon
+				fill: $white

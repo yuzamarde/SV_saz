@@ -1,0 +1,65 @@
+mixin i(name)
+	svg.icon(class='icon-' + name)
+		use(xlink:href='img/sprite.svg#icon-' + name)
+
+mixin header(link1, link2, link3, link4, link5)
+	header.header
+		.header__center.center
+			a.header__logo(href="index.html")
+				img.header__pic.header__pic_dark(src="img/logo-dark.png" alt="")
+				img.header__pic.header__pic_light(src="img/logo-light.png" alt="")
+			.header__wrapper
+				nav.header__nav
+					a.header__link(href="downloads.html" class=link1) Downloads
+					a.header__link(href="pricing.html" class=link2) Pricing
+					a.header__link(href="features.html" class=link3) Features
+					a.header__link(href="about-us.html" class=link4) About Us
+					a.header__link(href="contact.html" class=link5) Contact
+				.header__btns
+					a.header__btn.btn.btn_transparent.js-popup-open(href="#popup-sign-in" data-effect="mfp-zoom-in") Login
+					a.header__btn.btn.btn_orange.js-popup-open(href="#popup-sign-up" data-effect="mfp-zoom-in") Sign up
+				picture.header__preview
+					source(media="(max-width: 767px)" srcset="img/header-pic-mobile@2x.png, img/header-pic-mobile@2x.png 2x")
+					img(srcset="img/header-pic@2x.png 2x" src="img/header-pic.png" alt="")
+			button.header__burger
+
+mixin footer(link1, link2, link3, link4, link5)
+	.footer
+		.footer__center.center
+			.footer__body
+				.footer__wrap
+					a.footer__logo(href="index.html")
+						img.footer__pic.footer__pic_dark(src="img/logo-dark.png" alt="")
+						img.footer__pic.footer__pic_light(src="img/logo-light.png" alt="")
+					.footer__text Join millions of people who organize work and life with Solo App.
+				.footer__line
+					.footer__downloads
+						a.footer__download(href="#")
+							img(src="img/google-play.svg" alt="")
+						a.footer__download(href="#")
+							img(src="img/app-store.svg" alt="")
+					.footer__nav
+						a.footer__link(href="downloads.html" class=link1) Downloads
+						a.footer__link(href="pricing.html" class=link2) Pricing
+						a.footer__link(href="features.html" class=link3) Features
+						a.footer__link(href="about-us.html" class=link4) About Us
+						a.footer__link(href="contact.html" class=link5) Contact
+			.footer__bottom
+				.footer__copyright © Solo Inc. Designed by UI8 Team
+				.footer__social
+					a.footer__link(href="#")
+						+i('facebook')
+					a.footer__link(href="#")
+						+i('twitter')
+					a.footer__link(href="#")
+						+i('instagram')
+		label.switch.js-switch-theme
+			input.switch__input(type="checkbox")
+			span.switch__in
+				span.switch__box
+				span.switch__icon.switch__icon_dark
+					+i('dark')
+				span.switch__icon.switch__icon_light
+					+i('light')
+
+

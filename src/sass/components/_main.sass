@@ -1,0 +1,137 @@
+.main
+	position: relative
+	padding-top: 117px
+	+d
+		padding-top: 45px
+	+m
+		padding: 0
+		text-align: center
+	&__wrap
+		max-width: 545px
+		margin-bottom: 138px
+		+d
+			max-width: 360px
+			margin-bottom: 155px
+		+t
+			margin-bottom: 100px
+		+m
+			max-width: 100%
+			margin-bottom: 50px 
+	&__title
+		margin-bottom: 23px
+		+m
+			margin-bottom: 20px
+		span
+			display: block
+	&__text
+		margin-bottom: 41px
+		+sub-headline
+		color: $gray
+		+d
+			max-width: 260px
+			font-size: 16px 
+			line-height: 1.2
+			font-weight: 600 
+		+m
+			margin: 0 auto 32px
+			line-height: 1.5 
+	&__btns
+		display: flex
+		margin-right: -100px
+		+m
+			flex-direction: column
+			align-items: center
+			margin: 0
+	&__btn
+		+nl
+			margin-right: 24px
+			+m
+				margin: 0 0 24px 
+	&__bg
+		position: absolute
+		top: -26px
+		right: calc(50% - 987px)
+		pointer-events: none 
+		+d
+			top: -10px
+			right: calc(50% - 785px)
+			width: 880px
+		+t
+			right: calc(50% - 650px)
+			width: 700px
+		+m
+			position: relative
+			top: auto
+			right: auto
+			width: auto
+			margin: 0 -100px 0 0
+			img
+				max-width: 500px
+		+s
+			margin: 0 -160px 0 -100px
+		&[data-aos]
+			.main__preview
+				transition: all 1s 
+				&:nth-child(3)
+					transform: translate(25%,-25%)
+					opacity: 0 
+					transition-delay: .5s
+			&.aos-animate 
+				.main__preview
+					&:nth-child(3)
+						transform: translate(0)
+						opacity: 1
+	&__preview
+		&:nth-child(2)
+			top: 13.5%
+			right: 27%
+			width: 52%
+			+m
+				top: 12%
+				right: 30%
+				width: 45%
+		&:nth-child(3)
+			top: 15%
+			left: -.5%
+			width: 38.5%
+			+d
+				top: 11%
+				left: 2%
+			+m
+				top: 7%
+				left: 8%
+		img
+			width: 100% 
+		+nf
+			position: absolute
+	&__info
+		margin-bottom: 24px
+		text-align: center
+		color: $gray
+		+m
+			display: none
+	&__list
+		display: flex
+		margin: 0 -16px
+		+t
+			margin: 0 -8px 
+		+m
+			display: none
+	&__logo
+		flex-grow: 1
+		margin: 0 16px
+		+t
+			margin: 0 8px 
+		&:first-child
+			+d
+				display: none
+		img
+			max-width: 100%  
+	+nl
+		margin-bottom: 200px
+		+d
+			margin-bottom: 140px
+		+t
+			margin-bottom: 112px
+		+m
+			margin-bottom: 48px
